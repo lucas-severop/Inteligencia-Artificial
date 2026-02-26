@@ -1,0 +1,208 @@
+I.A - Técnicas ou metodologias 
+  SISTEMAS DE COMPORTAMENTO INTELIGENTE
+      - base de conhecimento
+          - armazenamento de experiência (PROLOG(lingua de programação); Sistemas Multi Agentes(SMA))
+      - motor de raciocínio / raciocínio automatizado (dedução, indução)
+          - (METODOS DE BUSCA; SMA (força bruta))
+              - cegos: amplitude e profundidade
+              - heuristicos: subida de encosta, guloso A*, Algoritimos Genéticos
+      - Aprendizado de máquina (reconhecer padrões por repetição (supervisadas ou não))
+          - redes neurais
+
+---------------------------------------------------------------------------------------------------------
+
+      - MÉTODOS DE BUSCA
+          - MODELAGEM DO PROBLEMA / SOLUÇÃO
+              1) Estados( inicial/construtor, intermediario/construtor2, final)
+              2) Regras de transição -> métodos que modificam o objeto
+              3) Restrição ( estado que não pode ser gerado)
+              4) Visitados (lista ou árvore ou um hashmap)
+              5) Função objetivo ( para saber o estado final)
+
+estado = obj q consome ram, o estado inicial n pode ser modificado para voltar 
+
+A) Problema da torre de hannoi
+Estado 
+//toda pilha tem os seguintes comandos: empty, peek, push/add, pop/remove
+    Stack t1 = new Stack();
+    Stack t2 = new Stack();
+    Stack t3 = new Stack();
+Estado inicial
+    t1.push(3)
+    t1.push(2)
+    t1.push(1)
+Estado final
+    t1.empty() && t2.empty()
+Regra de Transição
+  //r1 - mover t1 para t2
+
+R1-
+  if(ehValido(t1,t2)){
+      public void moverT1_T2(){
+          t2.add(t1.remove());
+      }
+      Estado = novo = new Estado(t1,t2,t3,"movendo topo t1 para topo t2")
+      if(!visitados.contains(novo)){
+        visitado.add(novo);
+      }
+  }
+R2-
+  if(ehValido(t1,t3)){
+      public void moverT1_T3(){
+          t3.add(t1.remove());
+      }
+      Estado = novo = new Estado(t1,t2,t3,"movendo topo t1 para topo t2")
+      if(!visitados.contains(novo)){
+        visitado.add(novo);
+      }
+  }
+R3-
+  if(ehValido(t2,t1)){
+      public void moverT2_T1(){
+          t1.add(t2.remove());
+      }
+      Estado = novo = new Estado(t1,t2,t3,"movendo topo t1 para topo t2")
+      if(!visitados.contains(novo)){
+        visitado.add(novo);
+      }
+  }
+R4-
+  if(ehValido(t2,t3)){
+      public void moverT2_T3(){
+          t3.add(t2.remove());
+      }
+      Estado = novo = new Estado(t1,t2,t3,"movendo topo t1 para topo t2")
+      if(!visitados.contains(novo)){
+        visitado.add(novo);
+      }
+  }
+R5-
+  if(ehValido(t3,t1)){
+      public void moverT3_T1(){
+          t1.add(t3.remove());
+      }
+      Estado = novo = new Estado(t1,t2,t3,"movendo topo t1 para topo t2")
+      if(!visitados.contains(novo)){
+        visitado.add(novo);
+      }
+      
+  }
+R6-
+  if(ehValido(t3,t2)){
+      public void moverT3_T2(){
+          t2.add(t3.remove());
+      }
+      Estado = novo = new Estado(t1,t2,t3,"movendo topo t1 para topo t2")
+      if(!visitados.contains(novo)){
+        visitado.add(novo);
+      }
+  }
+
+Restricao
+    public boolean ehValido(Stack Origem, Stack Destino){
+        if(Origem.emprty()){
+            return false;
+        }
+        if ((int)Origem.peek() > (int)Destino.peek()){
+            return false;
+        }
+        return true;
+    }
+
+Visitados - Lista ou Arvore ou hashmap
+["[321][][]"],["[32][1][]"]
+
+--------------------------------------------------------------------------------
+
+PROBLEMA DAS JARRAS
+  jarra1 suporta 4 litros
+  jarra1 suporta 3 litros
+
+  Torneira que jorra agua infinitamente
+
+  Objetivo: deixar em uma das jarras 2 litros
+
+  class Estado{
+    int j1;
+    int j2;
+
+    public Estado(int j1, int j2){
+        this.j1 = j1;
+        this.j2 = j2;
+    }
+
+    public boolean ehMeta(){
+        return ((this.j1 == 2 && this.j2 == 0) || (this.j1 == 0 && this;j2 == 2));
+    }
+
+    public void encherj1(){
+        this.j1 = 4;
+    }
+
+    public void encherj2(){
+        this.j2 = 3;
+    }
+
+    public void esvaziarj1(){
+        this.j1 = 0;
+    }
+
+    public void esvaziarj2(){
+        this.j2 = 0;
+    }
+
+    public void despejarj1_j2(){
+        int j1 = this.j1;
+        int j2 = this.j2;
+
+        if(j1 > (3 - j2)){
+          j1 = j1 - (3 - j2);
+          j1 = 3;
+        }
+        else {
+          j2 += j1;
+          j1 = 0;
+        }
+
+        Estado novo = new Estado(j1,j2);
+        if(!visitados.contains(novo)){
+            visitados.add(novo);
+        }
+    }
+    public void despejarj2_j1(){
+        int j1 = this.j1;
+        int j2 = this.j2;
+
+        if(j2 > (4 - j1)){
+          j2 = j2 - (4 - j1);
+          j2 = 4;
+        }
+        else {
+          j1 += j2;
+          j2 = 0;
+        }
+
+        Estado novo = new Estado(j1,j2);
+        if(!visitados.contains(novo)){
+            visitados.add(novo);
+        }
+    }
+
+        
+
+
+      
+
+class Roda{
+    psvm(){
+        Estado inicial = new Estado(0,0);
+}
+
+
+
+
+
+
+
+
+
