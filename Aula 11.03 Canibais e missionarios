@@ -1,0 +1,63 @@
+// 3 Canibais e 3 Missionarios
+// Missão: todos atravessarem o rio da esquerda pra direita de barco
+// Não pode; Ter mais canibais do q missionarios em qualquer lado; ter mais do que 2 pessoas no barco; deixar um pra tras; 
+
+//Variaveis
+CEsquerda == "0 a 3";
+CDireita == "0 a 3";
+MEsquerda == "0 a 3";
+MDireita == "0 a 3";
+Barco == "e" ou "d";
+
+
+//Estados
+
+Inicial: CEsquerda == 3 & MEsquerda == 3;
+Final: CDireita == 3 & MDireita == 3;
+
+//"Fazer"
+
+Barco == 0 a 2;
+
+//2 Canibal esquerda direita
+CaED{} if(CEsqueda >= 2 && barco "e"){CDireita == 2 && barco == "d"}
+
+//2 Canibal direita esquerda
+CaDE{} if(CDireita>= 2 && barco "d"){CEsquerda == 2 && barco == "e"}
+
+//1 Canibal esquerda direita
+CaED{} if(Cesqueda == 1 && barco "e"){CDireita == 1 && barco == "d"}
+
+//1 Canibal esquerda esquerda
+CaDE{} if(CDireita == 1 && barco "d"){CEsquerda == 1 && barco == "e"}
+
+//2 Missionario esquerda direita
+MiED{} if(MEsqueda >= 2 && barco "e"){MDireita == 2 && barco == "d"}
+
+//2 Missionario direita esquerda
+MiDE{} if(MDireita>= 2 && barco "d"){MEsquerda == 2 && barco == "e"}
+
+//1 Missionario esquerda direita
+MiED{} if(Mesqueda == 1 && barco "e"){MDireita == 1 && barco == "d"}
+
+//1 Missionario esquerda esquerda
+MiDE{} if(MDireita == 1 && barco "d"){MEsquerda == 1 && barco == "e"}
+
+//Missionario e Canibal esquerda direita
+MiCaED{} if(CEsqueda == 1 && MEsquerda == 1 && barco "e"){CDireita == 1 && MDireita == 1 && barco == "d"}
+
+//Missionario e Canibal  direita esquerda
+MiCaDE{} if(CDireita == 1 && MDireita == 1 && barco == "d" ){CEsqueda == 1 && MEsquerda == 1 && barco == "e"}
+
+
+//"Não Pode" ou "Restrição"
+while True;
+if (CEsquerda > MEsquerda ou CDireita > MDireita ou Barco > 2)
+  return false;
+
+//visitados 
+Lista de strings contendo as posições
+if (visitados !contains "MDireita" + "MEsquerda" + "CDireita" + "CEsquerda"+"barco"){
+  visitados.add("MDireita" + "MEsquerda" + "CDireita" + "CEsquerda"+"barco");
+}
+
