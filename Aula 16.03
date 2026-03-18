@@ -1,0 +1,29 @@
+Metodos de busca para IA (Cega = sem informação = força bruta)
+  Tecnicas de IA para motor de raciocinio
+  // humano é dedutivo
+
+Estados
+  Inicial (Estrutura de Dados)
+Restrições
+  O que não pode (depende do problema) 
+Visitados
+  Guarda estados que ja foram vistos para impedir a repetição (geralmente em string para poupar ram)
+Função meta
+  Estado final (Aonde devemos chegar)
+-----------------------------------------------------------------------------------------------------
+
+Heuristica (Com informação)
+  "Dica" Deve vir de um especialista
+    - Humano
+    - Matemática 
+  Custos 
+    - Real  g(n)
+    - Estimado h(n)
+  Subida da encosta  (climb hill)
+    - profundidade (só usa custo real)
+  Guloso (Greedy)
+    - Amplitude 
+    - só usa o custo estimado
+  A* (A estrela)
+    - Amplitude
+    - Correção de custo estemiado (Custo Real + Custo Estimado)
