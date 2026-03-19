@@ -27,3 +27,4 @@ Heuristica (Com informação)
   A* (A estrela)
     - Amplitude
     - Correção de custo estemiado (Custo Real + Custo Estimado)
+
