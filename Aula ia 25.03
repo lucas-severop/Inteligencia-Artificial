@@ -18,3 +18,40 @@ Métodos de Busca (Soluções)
   (Aprendizado de Máquina)
 -> Reconhcer padrões por amostras/treinamento 
       N.S ou S
+
+
+Fato 
+  --Sentaça ou --predicado ou --assertiva
+
+  papel(alex,professor).
+  papel(mazari, aluno).
+  papel(gustavo, aluno).
+  papel(gustavo, monitor).
+
+  estado(luz, ligado).
+  estado(arCondicionado, desligado).
+
+  matriculado(dosReis, jogos, ia).
+  matriculado(dosReis,jogos,design).
+
+  progenitor(jura, alex).
+  progenitor(jura, tina).
+  progenitor(alex,dante)
+  progenitor(simone,dante).
+
+  
+
+(4 predicados (papel,estado,matriculado,progenitor)) (9 fatos, todos os exemplos a cima)  (argumentos nesse caso são as coisas dentro das sentenças, ex: (alex,professor) 2 argumentos)
+
+Predicado é uma relação;
+  Nesse caso a relação entra alex e professor é "papel"
+
+
+Prolog
+  -> argumentos ou parometros
+      -> objeto
+        -> letra minuscula;
+      -> literal
+        -> aspas duplas, do jeito q tem q ser, ex: "Matheus dos Reis";
+      -> Variavel
+        -> Primeira Letra maiuscula;
