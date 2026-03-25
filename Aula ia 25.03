@@ -1,0 +1,20 @@
+Métodos de Busca (Soluções)
+  - Chegar em estado final
+  - Conjunto de passos até o estado desejado
+-> Tipos de problemas 
+  - diagnóstico = Reconhcer Padrões
+                    - Via treinamento (Repetição)
+  - Não se sabe os passos até o E+
+
+
+ (Base de conhecimento)
+-> Motores de Raciocinio   -----------------------------> Cegos ou força ------> Profundidade (moto de prolog) ou largura (amplitude) --> fica
+                                                            ou Heuristicos/informados ------------------------> Subida de encosta (Profundidade) (g(n))
+                                                          "Dica" -> especialista ou matematica                     ou Guloso (h(n))
+                                                              custos (real ou estimado)                              ou A* (Largura) (g(n) + h(n))
+
+    -> deduzir - método de força bruta (Profundidade)
+
+  (Aprendizado de Máquina)
+-> Reconhcer padrões por amostras/treinamento 
+      N.S ou S
