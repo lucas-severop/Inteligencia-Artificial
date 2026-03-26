@@ -55,3 +55,65 @@ Prolog
         -> aspas duplas, do jeito q tem q ser, ex: "Matheus dos Reis";
       -> Variavel
         -> Primeira Letra maiuscula;
+
+
+PROLOG
+EXEMPLOS:
+//
+%base
+%fatos
+	%sentencas ou predicados ou assinaturas de funcoes
+
+jogo("CS","Counter Strike",16,"FPS").
+jogo("LOL","League of Legends", 18,"MOBA").
+jogo("AID","Alone in the Dark",16,"SU").
+jogo("GTA","Grand Theft Auto",18,"SB").
+jogo("MC","Minecraft",0,"SB").
+
+
+tipo("SB","Sandbox").
+tipo("FPS","First Person Shooter").
+tipo("MOBA","Multiplayer Online Battle Arena").
+tipo("SU","Survival").
+
+%regras 
+	%sentacas com variaveis acompanhadas por ":-"
+
+
+indicacaoLivre(NomeJogo) :- 
+    jogo(_,NomeJogo,Idade,_),
+    Idade == 0.
+
+
+progenitor(hebert,cleber).
+progenitor(hebert,homer).
+progenitor(homer,bart).
+progenitor(homer,lisa).
+progenitor(homer,meggy).
+progenitor(margy,bart).
+progenitor(margy,lisa).
+progenitor(margy,meggy).
+progenitor(bart,alex).
+progenitor(bart,tina).
+
+avo(A,N) :-
+    progenitor(A,P),
+    progenitor(P,N).
+
+irmaos(A,B) :-
+    progenitor(P,A),
+    progenitor(P,B),
+    A \= B.
+
+tio(T,S) :-
+    irmaos(I,T),
+    progenitor(I,S).
+
+casados(A,B):-
+    progenitor(
+    
+    
+    
+    
+    
+cunhados(A,B) :-  //
