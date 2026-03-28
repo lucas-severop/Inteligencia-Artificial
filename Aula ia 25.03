@@ -95,6 +95,8 @@ progenitor(margy,lisa).
 progenitor(margy,meggy).
 progenitor(bart,alex).
 progenitor(bart,tina).
+progenitor(mulherdobart,tina).
+progenitor(mulherdobart,alex).
 
 avo(A,N) :-
     progenitor(A,P),
@@ -110,10 +112,14 @@ tio(T,S) :-
     progenitor(I,S).
 
 casados(A,B):-
-    progenitor(
+    progenitor(A,F),
+    progenitor(B,F),
+    A \= B.
     
-    
-    
+cunhados(A,B) :- 
+    irmaos(A,I),
+    casados(B,I),
+    A \= B.
     
     
 cunhados(A,B) :-  //
