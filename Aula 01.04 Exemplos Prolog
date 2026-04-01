@@ -1,0 +1,329 @@
+% Sistemas de Comportamento Inteligente
+%     - Base de conhecimento
+%     - Raciocínio automatizado
+%     - Aprendizado de máquina
+
+% Representação e processamento do conhecimento -> base e raciocínio -> PROLOG
+%     - Linguagem Prolog -> linguagem lógica escrita em sentenças ou predicados (relação)
+%         - predicados:
+%             - fatos - verdades que foram inseridos na base
+%             - regras - hipóteses ou consultas para serem testadas na base
+%         - naturalmente recursiva - ao invés de se ter instruções de repetição, há
+%           processos/métodos recursivos (métodos que se chamam)
+%         - naturalmente multithread (a não ser na web) - se houver mais de um core no processador, a 
+%           linguagem divide o processamento, dando maior otimização de processamento
+
+
+Prolog primeiro fatos dps regras
+
+%personagem predicado
+personagens(gandalf, humano, mago). %frase fato
+
+nasceu(Alguem, Lugar) :- %regra
+
+Varial = Letra Maiuscula.
+
+------------------------------------------------------------------------------------------------------------------------
+
+EXEMPLOS:
+
+% Sistemas de Comportamento Inteligente
+%     - Base de conhecimento
+%     - Raciocínio automatizado
+%     - Aprendizado de máquina
+
+% Representação e processamento do conhecimento -> base e raciocínio -> PROLOG
+%     - Linguagem Prolog -> linguagem lógica escrita em sentenças ou predicados (relação)
+%         - predicados:
+%             - fatos - verdades que foram inseridos na base
+%             - regras - hipóteses ou consultas para serem testadas na base
+%         - naturalmente recursiva - ao invés de se ter instruções de repetição, há
+%           processos/métodos recursivos (métodos que se chamam)
+%         - naturalmente multithread - se houver mais de um core no processador, a 
+%           linguagem divide o processamento, dando maior otimização de processamento
+
+%exemplos de fatos
+
+%base de conhecimento
+%personagem(nome,cor,energia).
+
+/*personagem(pacman,amarelo,50).
+personagem(fantasmaDormento,azul,10).
+personagem(fantasma,verde, 100).
+personagem(fruta,azul,0).
+
+%jogador(nome,idade).
+jogador(alex,45).
+jogador(fagner,30).
+jogador(rodrigo,20).
+jogador(bruno,30).
+jogador(pietro,19).
+
+%status(jogador,fase, pontuacao).
+status(alex,6, 10000).
+status(fagner,10, 12323).
+status(rodrigo,3,3444).
+status(bruno,5,3423).
+status(pietro,4,233).
+
+
+oldSchool(J) :- 
+    jogador(J,Idade),
+    Idade > 40,
+	status(J,Fase,_),
+	Fase > 5.
+				
+destaque(Jogador,Fase,Pontuacao):-
+	jogador(Jogador,_),
+	status(Jogador,Fase,Pontuacao),
+	Fase > 6.
+	
+destaque(Jogador,Fase,Pontuacao):-
+	jogador(Jogador,_),
+	status(Jogador,Fase,Pontuacao),
+	Pontuacao > 1000.
+
+mirim(Jogador) :-
+    jogador(Jogador, Idade),
+    Idade =< 19.
+
+mirim(Jogador) :-
+    jogador(Jogador,_),
+    status(Jogador, Fase, _),
+    Fase =< 1.*/
+
+/*jogador('Alexandre',45).
+jogador('Luiz Friess',19).
+jogador('Victor',19).
+jogador('Maria',55).
+
+homem('Alexandre').
+homem('Luiz Friess').
+homem('Victor').
+
+mulher('Maria').
+
+joga('Alexandre','RPG').
+joga('Luiz Friess', 'FPS').
+joga('Victor','FPS').
+joga('Victor','MMO').
+joga('Maria','MMO').
+joga('Maria','RPG').
+
+jogo('The Witcher 3', 'RPG', 18).
+jogo('Bioshock', 'FPS', 16).
+jogo('WOW','MMO',0).
+
+recomendaRPG(Pessoa,Jogo) :- 
+    jogador(Pessoa, IdadeJogador),
+    joga(Pessoa,'RPG'),
+    jogo(Jogo,'RPG',IdadeCensura),
+    IdadeJogador >= IdadeCensura.
+
+jogaMulher(Mulher,Jogo) :-
+    mulher(Mulher),
+    joga(Mulher,Tipo),
+    jogo(Jogo, Tipo, _).*/
+
+%--alunos matriculados
+% aluno( Num, Nome ) :- o aluno Nome esta matriculado com o codigo Num.
+/*aluno( 1, pedro ).
+aluno( 2, ana ).
+aluno( 3, rui ).
+aluno( 4, to ).
+aluno( 5, ze ).
+aluno( 6, marta ).
+aluno( 7, 'filipa alexandra' ).
+aluno( 8, bento ).
+aluno( 9, zara ).
+
+%--cursos registados na UM: 400=EEng; 200=ECiencias
+% curso( Cod, Sigla ) :- Cod � o c�digo interno da licenciatura designada pela Sigla.
+curso( 400001,'ECom' ).
+curso( 400002,eSI ).
+curso( 400003,'IG' ).
+curso( 400004,eBM ).
+curso( 200001,'MCC' ).
+
+%--alunos inscritos nos cursos
+% insc( Num, Cod ) :- o aluno de n�mero Num est� inscrito no curso de c�digo Cod.
+insc( 1, 400001 ).
+insc( 2, 400001 ).
+insc( 3, 400001 ).
+insc( 4, 400002 ).
+insc( 5, 400002 ).
+insc( 6, 400003 ).
+insc( 7, 400004 ).
+insc( 8, 200001 ).
+insc( 9, 200001 ).
+
+% inscrito( Aluno, Curso ) :- o Aluno descrito pelo seu numero e nome est� inscrito no Curso definido pelo codigo e sigla.
+inscrito( al(Num,Nome), cur(Cod,Sigla) ) :- 
+    aluno( Num,Nome ),
+    curso( Cod,Sigla ),
+    insc( Num,Cod ). */
+
+%--classes de comboios
+% classe( Sigla, Nome, Preco ) :- Nome descreve a classe (tipo) de comboio identificado pela Sigla
+%                                  sendo o bilhete cobrado a Preco por Km.
+/*classe( a, alfa, 50 ).
+classe( ic, intercidades, 40 ).
+classe( r, regional, 25 ).
+classe( su, suburbano, 15 ).
+
+%--comboios em marcha nas linhas da CP
+% comboio( Cod, Classe, Orig, Dest ) :- Cod � o c�digo do comboio da Classe (sigla) que parte de Orig
+%                                      e vai at� Dest.
+comboio( 40001,a,lisboa,porto ).
+comboio( 40002,a,lisboa,porto ).
+comboio( 40003,a,lisboa,braga ).
+comboio( 50001,ic,braga,porto ).
+comboio( 50002,ic,porto,braga ).
+comboio( 62001,su,braga,porto ).
+
+%--hor�rio de partida de cada comboio em cada esta��o (igual a hora de chegada)
+% horario( Cod, Local, Hora ) :- O comboio, descrito pelo Codigo, chega/parte �  esta��o Local � Hora (hh:mm)
+horario( 40001,lisboa,07:05 ).
+horario( 40001,santarem,07:35 ).
+horario( 40001,entroncamento,08:05 ).
+horario( 40001,porto,10:45 ).
+
+horario( 40002,lisboa,10:15 ).
+horario( 40002,coimbra,12:00 ).
+horario( 40002,aveiro,12:35 ).
+horario( 40002,porto,13:05 ).
+
+horario( 40003,lisboa,12:05 ).
+horario( 40003,santarem,12:35 ).
+horario( 40003,pombal,13:45 ).
+horario( 40003,coimbra,14:10 ).
+horario( 40003,aveiro,14:50 ).
+horario( 40003,porto,15:30 ).
+horario( 40003,famalicao,15:15 ).
+horario( 40003,braga,15:40 ).
+
+%--partidas de uma esta��o
+% partida( E, H, CodC,Cl,D ) :- Da esta��o E parte �s Hhoras um comboio de refer�ncia CodC e classe Cl com destino D.
+partida( E, H, CodC,Cl,D ) :- 
+    horario( CodC, E, H ),
+    comboio( CodC, C, _,D ), 
+    D \== E, 
+    classe( C, Cl, _ ).*/
+
+/*localizadoEm('Santa Maria','RS').
+localizadoEm('São Borja','RS').
+localizadoEm('Cruz Alta', 'RS').
+localizadoEm('Porto Alegre', 'RS').
+
+localizadoEm('Florianópolis','SC').
+localizadoEm('Sombrio','SC').
+
+localizadoEm('Curitiba','PR').
+
+localizadoEm('Montevidéo','Uruguai').
+localizadoEm('Paris','França').
+
+
+localizadoEm('RS','Brasil').
+localizadoEm('SC','Brasil').
+localizadoEm('PR','Brasil').
+
+localizadoEm('Brasil','América do Sul').
+localizadoEm('Uruguai', 'América do Sul').
+localizadoEm('França', 'Europa').
+
+estaEm(Lugar, OutroLugar) :- localizadoEm(Lugar, OutroLugar).
+estaEm(Lugar, OutroLugar) :- localizadoEm(Lugar, I),
+                              estaEm(I,OutroLugar).
+
+nasceuEm('Renato','Santa Maria').
+nasceuEm('João F','Cruz Alta').
+nasceuEm('Victor','São Borja').   
+nasceuEm('Arthur','Florianópolis').
+nasceuEm('Nicholas','Paris').
+nasceuEm(P,Lugar):- localizadoEm(OutroLugar, Lugar),
+                    nasceuEm(P,OutroLugar).
+
+
+
+gaucho(P) :- nasceuEm(P,'RS').
+
+brasileiro(P) :- nasceuEm(P, 'Brasil'). */
+
+%o exército azul tem 100 soldados, enquanto o exército vermelho tem 200
+%soldados. O azul, tem um general, dois capitães, 10 tenentes. O vermelho
+%tem um general, 5 capitães, 5 tenentes.
+%o exército azul está posicionado a esquerda do rio guaiba, enquanto
+%que o vermelho está a direita. O azul está sob o monte diamante, enquanto
+%o vermelho está sob a planície de fogo
+
+/*exercito(azul,100).
+exercito(vermelho,200).
+exercito(dourado,1000).
+
+general(1,azul).
+general(1,vermelho).
+general(3,dourado).
+
+capitao(2,azul).
+capitao(5,vermelho).
+capitao(10,dourado).
+
+tenente(10,azul).
+tenente(5,vermelho).
+tenente(20,dourado).
+
+%5 é melhor que 1
+relevo(morro,diamante,5).
+relevo(morro,ouro,3).
+relevo(planicie,fogo,4).
+relevo(rio,guaiba,1).
+
+estaPosicionado(azul,esquerda,guaiba).
+estaPosicionado(vermelho,direita,guaiba).
+estaPosicionado(azul,sobre, diamante).
+estaPosicionado(vermelho, sobre, fogo).
+estaPosicionado(dourado,esquerda,guaiba).
+estaPosicionado(dourado,sobre,guaiba).
+
+altoEscalao(Quantidade, Exercito) :- general(Q1, Exercito),
+                                     capitao(Q2, Exercito),
+    								 Quantidade is Q1 + Q2.
+
+aliado(Exercito1, Exercito2) :- exercito(Exercito1,_),
+                                exercito(Exercito2,_),
+                                estaPosicionado(Exercito1,Lugar,Nome),
+                                estaPosicionado(Exercito2,Lugar,Nome),
+                                relevo(rio,Nome,_),
+                                Exercito1 \== Exercito2.
+                          
+vantagem(Exercito1, Exercito2) :- exercito(Exercito1, Q1),
+                                  exercito(Exercito2, Q2),
+                                  Q is Q2 * 2,
+								  Q1 > Q,
+                                  writeln( " possui mais efetivo em dobro").
+
+vantagem(Exercito1, Exercito2) :- exercito(Exercito1,_),
+                                  exercito(Exercito2,_),
+                                  estaPosicionado(Exercito1,sobre,Nome1),
+    							  relevo(_,Nome1,Vantagem1),
+                                  Exercito1 \== Exercito2,
+                                  estaPosicionado(Exercito2,sobre,Nome2),
+                                  relevo(_,Nome2, Vantagem2),
+								  Vantagem1 > Vantagem2,
+                                  writeln(" esta melhor posicionado no campo de batalha").
+
+vantagem(Exercito1, Exercito2) :- aliado(Exercito1, _),
+                                  not(aliado(Exercito2,_)),
+                                  writeln("possui o aliado ").
+            
+fragil(Exercito) :- exercito(Exercito, _),
+                    estaPosicionado(Exercito, sobre, Nome),
+                    relevo(Relevo, Nome, Vantagem),
+                    Vantagem < 2,
+                    writeln(Relevo).*/
+
+    
+    
+
+	
