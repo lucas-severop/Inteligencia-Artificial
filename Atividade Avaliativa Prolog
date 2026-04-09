@@ -1,0 +1,127 @@
+% Questão 1.
+disciplina("Calculo1").
+disciplina("Calculo2").
+
+pre_requisitos("Calculo1","Calculo2").
+
+ja_cursou("Lucas","Calculo1").
+
+pode_cursar(Aluno,Disciplina) :-
+    ja_cursou(Aluno,Pre_requisito),
+	pre_requisitos(Pre_requisito, Disciplina).*/
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 2.
+nota("Lucas","Calculo",8).
+nota("Lucas","Historia",5).
+
+aprovado(Aluno,Disciplina):-
+    nota(Aluno,Disciplina,Valor),
+    Valor >= 7.
+
+
+reprovado(Aluno,Disciplina) :-
+    nota(Aluno,Disciplina,Valor),
+    Valor < 7.*/
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 3.
+estrada("CidadeA", "CidadeB").
+estrada("CidadeC", "CidadeB").
+estrada("CidadeA", "CidadeC").
+estrada("CidadeC", "CidadeA").
+
+pode_viajar(De, Para):-
+    estrada(De,Para).
+
+%Sem o sistema de simetria no caso sem a informação de que a cidade A vai para a cidade C  E QUE  a cidade C vai para Cidade A
+%Não teria como o programa "Deduzir" que as cidades são simetricas.*/
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 4
+esta_em("Celular","Quarto").
+esta_em("Carregador","Cozinha").
+
+comodo_em("Quarto","Segundo Andar").
+comodo_em("Cozinha","Primeiro Andar").
+
+localizacao_geral(Objeto,Casa):-
+    esta_em(Objeto,Comodo),
+    comodo_em(Comodo,Casa).*/
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 5.
+ingrediente("Sanduiche","Pão").
+ingrediente("Sanduiche","Queijo").
+ingrediente("Sanduiche","Mortadela").
+ingrediente("Sanduiche","Margarina").
+ingrediente("Maçã","Maçã").
+
+vegano("Maçã").
+vegano("Pão").
+
+prato_vegano(Prato):-
+    ingrediente(Prato,Ingrediente),
+    vegano(Ingrediente).
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 6
+filme("Panico","Terror").
+filme("Iron Lung","Terror").
+filme("Interstelar","Ficcção Cientifica").
+
+usuario_gosta("João","Terror").
+usuario_gosta("Maria","Ficcção Cientifica").
+
+recomendar(Filme,Usuario):-
+    filme(Filme,Genero),
+    usuario_gosta(Usuario,Genero).
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 7
+
+sobre("BlocoA","BlocoB").
+sobre("BlocoB","BlocoC").
+
+no_chao("BlocoC").
+
+abaixo(X,Y):-
+	sobre(Y,X).
+
+bloco_livre(X):-
+    not(abaixo(X,_)).
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 8
+tem_penas("Galinhas").
+tem_pelo("Cachorro").
+
+viviparo("Cachorro").
+poe_ovos("Galinhas").
+
+ave(X):-
+    tem_penas(X),
+    poe_ovos(X).
+
+mamifero(X):-
+    tem_pelo(X),
+    viviparo(X).
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 9
+
+cliente("Lucas",0).
+cliente("João",1000).
+
+produto("Tênis",500).
+produto("Calça",1500).
+
+pode_comprar(Nome,Item):-
+    cliente(Nome,Saldo),
+    produto(Item,Preco),
+    Saldo > Preco.*/
+---------------------------------------------------------------------------------------------------------------------------------
+% Questão 10
+
+venceu("JogadorA","JogadorB").
+venceu("JogadorA","JogadorC").
+venceu("JogadorB","JogadorC").
+venceu("JogadorC","JogadorD").
+
+%perdeu(Ganhou,Perdeu):-
+  %  venceu(Ganhou,Perdeu).
+
+invicto(Jogador):-
+    not(venceu(_,Jogador)).
