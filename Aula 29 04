@@ -1,0 +1,5 @@
+Algoritimo Genético
+  - método de busca (Heuristico);
+  - melhor do que A*. é pra tudo, aumenta restição, "Turbinado";
+
+ao inves de ir estado por estado vai em massa;
