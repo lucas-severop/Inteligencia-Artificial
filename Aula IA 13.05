@@ -1,0 +1,30 @@
+Metodos de Busca:                          Algoritimo Genetico
+  *estados                                  *Cromosso/Individuo
+  *regras de transição                      *seleção + reprodução + mutação  (o q muda drasticamente a programação)
+  *restrições                               *Fitness
+  *visitados                                *População
+  *heuristica / dica (se tiver)
+
+Ag (Algoritimo Genetico)resolve problemas com: 
+  * muita restrição / muito if
+  * desconhcer totalmente o estado final
+  
+Ag: Estado (Individuo) Pega o estado mais perto e segue por ele, os estados menos perto são esquecidos
+O estado é escolhido por: Quão perto está da solução e Quão longe está das restrições;
+
+Grafo
+  ↳ arvore
+    ↳ fila             etc.. 
+     ↳ pilha            toda pilha é uma fila
+      ↳ lista            toda lista é um pilha
+
+população é 1 estado = individuos = cromossomo
+ ↳ artibuto / gene
+
+Curiosidades:
+	1) muita lista
+	2) muito Random -> AG é o maior algoritmo de aleatoriedade da PARÓQUIA, só que controlado
+	3) regra de 3
+	4) orientação a objetos
+
+Mutar = brincar de Deus, escolher um individuo da população e mutar um atributo. bom pra quando estiver ficando mto parecido
