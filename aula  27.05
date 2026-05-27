@@ -1,0 +1,35 @@
+Sistemas multiagentes
+  foco no agente - entidade de sw ou hw autonoma, proativa, flexivel e com comunicação
+  - engine: thread, try-catch, sobrecarga, scket+ip+porta+protocolo
+    - JASON
+    - mas2j:
+      - Projeto = Organização do sistema
+        1) nome ambiente (enviroment)
+        2) os agentes
+        3) arquitetura
+            centralizado
+
+
+- asl                                           - java
+robo1 (r1) = papel de guardar peça peq          Eviroment
+robo2 (r2)= papel de guardar peça media        -init()
+robo1&2 = papel de guardar peã grande          -addPercept()
+                                               -removerPercept()
+                                               -executeAction()
+
+- Almoxarifado
+  -entrada
+    -peça(peq)
+    -peça(med)
+    -peça(grand)
+
+  -Ciclo
+    perceber
+    planejar                     
+    executar -> ação no ambiente ↺
+                                    
+                  Npc, etc...
+                    |
+                  agt1 - atuador     agt2 - atuador
+                    |                  |
+                  sensor            sensor
