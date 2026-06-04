@@ -1,0 +1,33 @@
+Redes Neurais = Momento da Computação
+
+    Sistemas de comportamento inteligente via tecnicas de ia
+      - base de conhecimento: prolog + sma (sistemas multi agentes)
+      - motor de raciocinio: metodos de busca(profundidade, largua, subida de enconta, gulosa a*. algoritmos genéticos) + sma
+      - aprendizado de maquina: sma + redes neurais
+    Redes Neurais artificiais
+      - inspirado no cerebro humano
+      - composta por unidades de processamento(neuronios artificiais) interconectados
+
+    resumo:Técnica de IA que simula o cérebro humano para resolver problemas complexos, 
+           via treinamento repetititivo e ajustes de pesos em amostras
+
+    Sistemas computadorizado
+
+      memoria secundaria (ms)
+    (arquivos numas pasta(positivos))
+
+    (arquivos numas pasta(negativos))
+
+      RAM = treinamento
+        1- [f1][f2][f3][...][fn]  
+          carregamento > identificação -> supervisionada + processamento - tempo + acuracia
+                                  ⮩  Não supervisioanda ++ processamento + tempo - acuracia
+
+       2- [][][][][]    validação         
+          Carregamento    
+          Identificação
+
+        3- (teste) X amostras         
+        
+        4- Gerar o modelo pré treinado (online)
+
